@@ -1,0 +1,172 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.base{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(180deg, #60b3d7,#6077d2,#a770cd);
+    background-position: 0px 100%;
+    animation-name: animacaoUD;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}
+
+.base.up-down{
+    background-size: 100% 300%;
+}
+
+.base.left-right{
+    background-size: 300% 100%;
+}
+
+@keyframes animacaoUD {
+    0%, 100%{
+        background-position: 0px 0px;
+    }
+    50%{
+        background-position: 0px 100%;
+    }
+}
+
+@keyframes animacaoLR {
+    0%, 100%{
+        background-position: 0px 0px;
+    }
+    50%{
+        background-position: 100% 0px;
+    }
+}
+
+.menu{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 100vh;
+    border-radius: 0px 10px 10px 0px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu .item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu label{
+    width: 90%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.menu input{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+input[type=number]{
+    text-align: center;
+    width: 60%;
+    border: 1px solid #6077d2;
+    border-radius: 10px;
+    outline: none;
+    user-select: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.velocidade{
+    width: 90%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6077d2;
+}
+
+.velocidade i{
+    transition: .5s;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.velocidade i:hover{
+    font-size: 20px;
+}
+
+.direcao{
+    transition: 1s;
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+    transform: rotate(180deg);
+}
+
+.direcao i{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #6077d2;
+    background-color: #60b3d7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .8s;
+}
+
+.duvida{
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: #6077d2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .8s;
+    position: relative;
+    cursor: pointer;
+}
+
+.duvida::before{
+    content: '?';
+    color: white;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.duvida:hover{
+    animation: infinite alternate-reverse 2s loop;
+}
+
+@keyframes loop {
+    0%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}

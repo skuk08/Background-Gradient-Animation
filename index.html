@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG animado!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    <div class="base up-down"></div>
+    <div class="menu">
+        <div class="item">
+            <label for="cor1">1º COR</label>
+            <input type="color" name="cor1" id="cor1" value="#60b3d7">
+        </div>
+        <div class="item">
+            <label for="cor2">1º COR</label>
+            <input type="color" name="cor2" id="cor2" value="#6077d2">
+        </div>
+        <div class="item">
+            <label for="cor3">1º COR</label>
+            <input type="color" name="cor3" id="cor3" value="#a770cd">
+        </div>
+        <div class="velocidade">
+            <label for="num">Speed</label>
+            <i class="btnUpVelo bi bi-caret-up-fill"></i>
+            <input type="number" id="num" min="1" max="15" value="8">
+            <i class="btnDownVelo bi bi-caret-down-fill"></i>
+        </div>
+        <div class="direcao">
+            <i class="bi bi-arrow-up"></i>
+        </div>
+        <!-- <div class="duvida"></div> -->
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
