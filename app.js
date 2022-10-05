@@ -6,8 +6,12 @@ window.onload = () => {
 
     let menu = document.querySelector(".menu");
     let inputs = menu.querySelectorAll("input");
-    let direcaoDiv = menu.querySelector(".direcao");
 
+    inputs.forEach(input => {
+        input.addEventListener("change",Atualizar);
+    });
+
+    let direcaoDiv = menu.querySelector(".direcao");
     direcaoDiv.addEventListener("click", () => {
         if(grau == 360 ) grau = 0;
         else grau += 90;
@@ -16,15 +20,15 @@ window.onload = () => {
         else{animacao = "animacaoUD"; classe = "base up-down";}
         console.log(grau, animacao, classe)
         Atualizar();
-    })
-
-    inputs.forEach(input => {
-        input.addEventListener("change",Atualizar);
     });
 
     function Atualizar(){
-        base.style.backgroundImage = "linear-gradient("+grau+"deg,"+inputs[0].value+","+inputs[1].value+","+inputs[2].value+")";
-        base.style.animationDuration = inputs[3].value+"s";
+        let cor1 = inputs[0].value;
+        let cor2 = inputs[1].value;
+        let cor3 = inputs[2].value;
+        let speed = inputs[3].value;
+        base.style.backgroundImage = "linear-gradient("+grau+"deg,"+cor1+","+cor2+","+cor3+")";
+        base.style.animationDuration = speed;
         base.style.animationName = animacao;
         base.className = classe;
     }
